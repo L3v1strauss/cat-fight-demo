@@ -12,5 +12,14 @@ public interface ICatService {
 
     Cat getByName(String name);
 
-    public void updateCatStrenght(String name, int strenght);
+    int getCatHealth(String name);
+
+    int getCatDiceSide(String name);
+
+    void rollCatDice(String name);
+
+
 }
+
+
+

@@ -9,25 +9,41 @@ import java.util.List;
 
 public class CatService implements ICatService {
 
-    ICatDao catDao = new CatDao();
+    private ICatDao catDao = new CatDao();
 
     @Override
-   public List<Cat> getCats(){
-    return catDao.getCats();
-}
-     @Override
-    public void addCat(Cat cat){
+    public List<Cat> getCats() {
+        return catDao.getCats();
+    }
+
+    @Override
+    public void addCat(Cat cat) {
         catDao.addCat(cat);
     }
 
-   @Override
-    public Cat getByName(String name){
+    @Override
+    public Cat getByName(String name) {
         return catDao.getByName(name);
-}
+    }
 
     @Override
-    public void updateCatStrenght(String name, int strenght) {
-        catDao.updateCatStrenght(name, strenght);
+    public int getCatHealth(String name) {
+        return catDao.getCatHealth(name);
+    }
+
+    @Override
+    public int getCatDiceSide(String name) {
+        return catDao.getCatDiceSide(name);
+    }
+
+    @Override
+    public void rollCatDice(String name) {
+        catDao.rollCatDice(name);
     }
 
 }
+
+
+
+
+
