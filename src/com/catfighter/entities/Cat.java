@@ -1,20 +1,21 @@
 package com.catfighter.entities;
 
-public class Cat {
+public class Cat extends Animal {
 
     private String name;
+    private int diceSide;
 
-    private int age;
-
-    private int strenght;
-
-    public Cat() {
+    public Cat(String name, int health, int damage, int agility, int strenght) {
+        super(health, damage, agility, strenght);
+        this.name = name;
     }
 
-    public Cat(String name, int age, int strenght) {
-        this.name = name;
-        this.age = age;
-        this.strenght = strenght;
+    public int getDiceSide() {
+        return diceSide;
+    }
+
+    public void setDiceSide(int diceSide) {
+        this.diceSide = diceSide;
     }
 
     public String getName() {
@@ -25,28 +26,10 @@ public class Cat {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getStrenght() {
-        return strenght;
-    }
-
-    public void setStrenght(int strenght) {
-        this.strenght = strenght;
-    }
-
     @Override
     public String toString() {
         return "Cat{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
-                ", strenght=" + strenght +
                 '}';
     }
 }

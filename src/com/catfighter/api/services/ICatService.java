@@ -3,6 +3,7 @@ package com.catfighter.api.services;
 import com.catfighter.entities.Cat;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ICatService {
 
@@ -12,5 +13,22 @@ public interface ICatService {
 
     Cat getByName(String name);
 
-    public void updateCatStrenght(String name, int strenght);
+    int getCatDamage(String name);
+
+    int getCatAgility(String name);
+
+    int getCatStrenght(String name);
+
+    int getCatHealth(String name);
+
+    void updateCatHealth(String name, int health);
+
+    int getCatDiceSide(String name);
+
+    void rollCatDice(String name);
+
+
 }
+
+
+
