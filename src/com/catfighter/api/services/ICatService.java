@@ -8,16 +8,13 @@ public interface ICatService {
 
     List<Cat> getCats();
 
-    void addCat(Cat cat);
+    List<Cat> getFightCats();
+
+    void addCat(List<Cat> cats, Cat cat);
 
     Cat getByName(String name);
 
     int getCatHealth(String name);
-
-    int getCatDiceSide(String name);
-
-    void rollCatDice(String name);
-
 
 }
 

@@ -5,9 +5,10 @@ public class Cat extends Animal {
     private String name;
     private int diceSide;
 
-    public Cat(String name, int health, int damage, int agility, int strenght) {
+    public Cat(String name, int health, int damage, int agility, int strenght, int diceSide) {
         super(health, damage, agility, strenght);
         this.name = name;
+        this.diceSide = diceSide;
     }
 
     public int getDiceSide() {

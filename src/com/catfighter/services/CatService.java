@@ -7,9 +7,10 @@ import com.catfighter.entities.Cat;
 
 import java.util.List;
 
+
 public class CatService implements ICatService {
 
-    private ICatDao catDao = new CatDao();
+    private final ICatDao catDao = new CatDao();
 
     @Override
     public List<Cat> getCats() {
@@ -17,8 +18,13 @@ public class CatService implements ICatService {
     }
 
     @Override
-    public void addCat(Cat cat) {
-        catDao.addCat(cat);
+    public List<Cat> getFightCats() {
+        return catDao.getFightCats();
+    }
+
+    @Override
+    public void addCat(List<Cat> cats, Cat cat) {
+        catDao.addCat(cats, cat);
     }
 
     @Override
@@ -29,16 +35,6 @@ public class CatService implements ICatService {
     @Override
     public int getCatHealth(String name) {
         return catDao.getCatHealth(name);
-    }
-
-    @Override
-    public int getCatDiceSide(String name) {
-        return catDao.getCatDiceSide(name);
-    }
-
-    @Override
-    public void rollCatDice(String name) {
-        catDao.rollCatDice(name);
     }
 
 }
