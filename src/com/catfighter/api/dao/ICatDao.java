@@ -17,5 +17,4 @@ public interface ICatDao {
     Cat getByName(String name);
 
     int getCatHealth(String name);
-
 }

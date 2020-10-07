@@ -37,7 +37,6 @@ public class CatService implements ICatService {
     public int getCatHealth(String name) {
         return catDao.getCatHealth(name);
     }
-
 }
 
 

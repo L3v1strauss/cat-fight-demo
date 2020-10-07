@@ -15,7 +15,5 @@ public class CriticalAttack {
 
     public static int criticalStrike(Cat cat) {
         return (cat.getDamage() * 2) + ((cat.getAgility() + cat.getStrenght()) / 2);
-
-
     }
 }

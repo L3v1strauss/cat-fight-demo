@@ -16,7 +16,6 @@ public interface ICatService {
     Cat getByName(String name);
 
     int getCatHealth(String name);
-
 }
 
 

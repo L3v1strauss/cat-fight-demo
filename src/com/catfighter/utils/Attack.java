@@ -26,6 +26,4 @@ public class Attack {
             cat2.setHealth(cat2.getHealth() - cat1.getDamage());
         }
     }
-
-
 }

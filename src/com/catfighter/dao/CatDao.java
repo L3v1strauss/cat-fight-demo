@@ -43,7 +43,6 @@ public class CatDao implements ICatDao {
         Cat cat = this.getByName(name);
         return cat.getHealth();
     }
-
 }
 
 
