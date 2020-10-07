@@ -53,18 +53,15 @@ public class DiceGame {
             fightCats.put(cat, rollDice());
         }
         fightCats.entrySet()
-                .stream()
-                .sorted(Map.Entry.comparingByValue())
                 .forEach(x -> System.out.format("%s кинул кости и кости показали %d%n",
                         x.getKey().getName(), x.getValue()));
-        String fighterName1 = fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .limit(1).map(x -> x.getKey().getName())
-                .collect(Collectors.joining());
-        System.out.println("На арену выходит " + fighterName1);
-        String fighterName2 = fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .skip(1).limit(1).map(x -> x.getKey().getName())
-                .collect(Collectors.joining());
-        System.out.println("На арену выходит " + fighterName2);
+        fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                .skip(1).limit(1).forEach(x -> System.out.format("На арену выходит и атакует первым %s%n",
+                x.getKey().getName()));
+        fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                .limit(1).forEach(x -> System.out.format("На арену выходит и атакует вторым %s%n",
+                        x.getKey().getName()));
+
     }
 
     public static String fighterName1(Map<Cat, Integer> fightCats) {
