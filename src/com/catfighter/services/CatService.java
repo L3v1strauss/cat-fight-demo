@@ -6,6 +6,7 @@ import com.catfighter.dao.CatDao;
 import com.catfighter.entities.Cat;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class CatService implements ICatService {
@@ -18,7 +19,7 @@ public class CatService implements ICatService {
     }
 
     @Override
-    public List<Cat> getFightCats() {
+    public Map<Cat, Integer> getFightCats() {
         return catDao.getFightCats();
     }
 

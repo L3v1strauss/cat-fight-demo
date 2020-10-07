@@ -1,22 +1,21 @@
 package com.catfighter.entities;
 
+import java.util.function.Function;
+import java.util.stream.Stream;
+
 public class Cat extends Animal {
 
     private String name;
-    private int diceSide;
+    private int luck;
 
-    public Cat(String name, int health, int damage, int agility, int strenght, int diceSide) {
+    public Cat(int health, int damage, int agility, int strenght, int luck) {
         super(health, damage, agility, strenght);
-        this.name = name;
-        this.diceSide = diceSide;
+        this.luck = luck;
+
     }
 
-    public int getDiceSide() {
-        return diceSide;
-    }
-
-    public void setDiceSide(int diceSide) {
-        this.diceSide = diceSide;
+    public int getLuck() {
+        return luck;
     }
 
     public String getName() {

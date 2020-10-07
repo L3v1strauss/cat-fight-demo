@@ -8,7 +8,7 @@ import java.util.*;
 public class CatDao implements ICatDao {
 
     private final List<Cat> cats = new ArrayList<>();
-    private final List<Cat> fightCats = new ArrayList<>();
+    private final Map<Cat, Integer> fightCats = new HashMap<>();
 
     @Override
     public List<Cat> getCats() {
@@ -16,7 +16,7 @@ public class CatDao implements ICatDao {
     }
 
     @Override
-    public List<Cat> getFightCats() {
+    public Map<Cat, Integer> getFightCats() {
         return fightCats;
     }
 
@@ -27,10 +27,15 @@ public class CatDao implements ICatDao {
 
     @Override
     public Cat getByName(String name) {
-        Optional<Cat> optionalCat = fightCats.stream()
-                .filter(x -> x.getName().equals(name))
-                .findFirst();
-        return optionalCat.orElse(null);
+        try {
+            return fightCats.keySet().stream()
+                    .filter(cat -> cat.getName().equals(name))
+                    .findFirst()
+                    .orElse(null);
+        } catch (NullPointerException exception) {
+            System.out.println();
+        }
+        return null;
     }
 
     @Override
