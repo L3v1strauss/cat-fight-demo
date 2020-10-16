@@ -1,6 +1,8 @@
 package com.catfighter.entities;
 
-public class Animal {
+import java.io.Serializable;
+
+public class Animal implements Serializable {
 
     private int health;
     private int damage;

@@ -21,7 +21,7 @@ public class CatDao implements ICatDao {
     }
 
     @Override
-    public void addCat(List<Cat> cats, Cat cat) {
+    public void addCat(Cat cat) {
         cats.add(cat);
     }
 

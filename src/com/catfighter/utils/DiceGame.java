@@ -1,6 +1,6 @@
 package com.catfighter.utils;
 
-import com.catfighter.Exceptions.DiceGameException;
+import com.catfighter.exceptions.DiceGameException;
 import com.catfighter.entities.Cat;
 
 import java.io.IOException;
@@ -22,14 +22,12 @@ public class DiceGame {
             System.out.println("У одного из котов кости упали на ребро");
         }
         return x;
-
     }
 
     public static void zero(int value) throws DiceGameException {
         if (value == 0) {
             throw new DiceGameException("Error");
         }
-
     }
 
     public static void nameCats(List<Cat> cats) throws IOException {
@@ -45,34 +43,25 @@ public class DiceGame {
                     .limit(1)
                     .collect(Collectors.joining()));
         }
-
     }
 
     public static void thatFighters(Map<Cat, Integer> fightCats, List<Cat> cats) {
         for (Cat cat : cats) {
             fightCats.put(cat, rollDice());
         }
-        fightCats.entrySet()
-                .forEach(x -> System.out.format("%s кинул кости и кости показали %d%n",
-                        x.getKey().getName(), x.getValue()));
-        fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .skip(1).limit(1).forEach(x -> System.out.format("На арену выходит и атакует первым %s%n",
-                x.getKey().getName()));
-        fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .limit(1).forEach(x -> System.out.format("На арену выходит и атакует вторым %s%n",
-                        x.getKey().getName()));
-
+        fightCats.forEach((key, value) -> System.out.format("%s кинул кости и кости показали %d%n",
+                key.getName(), value));
+        System.out.println("На арену выходит " + DiceGame.fighterName1(fightCats));
+        System.out.println("На арену выходит " + DiceGame.fighterName2(fightCats));
     }
 
     public static String fighterName1(Map<Cat, Integer> fightCats) {
         return fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .limit(1).map(x -> x.getKey().getName())
-                .collect(Collectors.joining());
+                .limit(1).map(x -> x.getKey().getName()).collect(Collectors.joining());
     }
 
     public static String fighterName2(Map<Cat, Integer> fightCats) {
         return fightCats.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .skip(1).limit(1).map(x -> x.getKey().getName())
-                .collect(Collectors.joining());
+                .skip(1).limit(1).map(x -> x.getKey().getName()).collect(Collectors.joining());
     }
 }

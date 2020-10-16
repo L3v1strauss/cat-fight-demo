@@ -24,8 +24,8 @@ public class CatService implements ICatService {
     }
 
     @Override
-    public void addCat(List<Cat> cats, Cat cat) {
-        catDao.addCat(cats, cat);
+    public void addCat(Cat cat) {
+        catDao.addCat(cat);
     }
 
     @Override

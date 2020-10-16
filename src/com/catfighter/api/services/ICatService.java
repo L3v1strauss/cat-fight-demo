@@ -11,7 +11,7 @@ public interface ICatService {
 
     Map<Cat, Integer> getFightCats();
 
-    void addCat(List<Cat> cats, Cat cat);
+    void addCat(Cat cat);
 
     Cat getByName(String name);
 

@@ -1,4 +1,4 @@
-package com.catfighter.Exceptions;
+package com.catfighter.exceptions;
 
 public class DiceGameException extends Exception{
 
