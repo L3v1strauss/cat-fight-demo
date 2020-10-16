@@ -13,10 +13,6 @@ public class Cat extends Animal implements Serializable {
 
     }
 
-    public int getLuck() {
-        return luck;
-    }
-
     public String getName() {
         return name;
     }

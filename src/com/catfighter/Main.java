@@ -5,6 +5,7 @@ import com.catfighter.entities.Cat;
 import com.catfighter.services.CatService;
 import com.catfighter.utils.Attack;
 import com.catfighter.utils.DiceGame;
+import com.catfighter.utils.Names;
 import com.catfighter.utils.SavedGame;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class Main {
         catService.addCat(new Cat(100, 10, 2, 2, 1));
         catService.addCat(new Cat(100, 6, 3, 4, 1));
         catService.addCat(new Cat(100, 4, 7, 3, 1));
-        DiceGame.nameCats(catService.getCats());
+        Names.nameCats(catService.getCats());
         DiceGame.thatFighters(catService.getFightCats(),catService.getCats());
         System.out.println();
         while (catService.getCatHealth(DiceGame.fighterName2(catService.getFightCats())) > 0

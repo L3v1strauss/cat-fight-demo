@@ -30,21 +30,6 @@ public class DiceGame {
         }
     }
 
-    public static void nameCats(List<Cat> cats) throws IOException {
-        Path path = Path.of("resources", "names", "Names.txt");
-        Stream<String> lines = Files.lines(path);
-        List<String> names = new ArrayList<>();
-        lines.forEach(names::add);
-        int skipCounter = 0;
-        for (Cat cat : cats) {
-            cat.setName(names.stream()
-                    .filter(Pattern.compile("[a-zA-Z]+").asPredicate())
-                    .skip(skipCounter++)
-                    .limit(1)
-                    .collect(Collectors.joining()));
-        }
-    }
-
     public static void thatFighters(Map<Cat, Integer> fightCats, List<Cat> cats) {
         for (Cat cat : cats) {
             fightCats.put(cat, rollDice());
