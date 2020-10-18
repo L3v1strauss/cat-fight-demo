@@ -1,15 +1,12 @@
 package com.catfighter.utils;
 
-import com.catfighter.exceptions.DiceGameException;
+import com.catfighter.api.exceptions.DiceGameException;
 import com.catfighter.entities.Cat;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
-import java.util.regex.Pattern;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DiceGame {
 
