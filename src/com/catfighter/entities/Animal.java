@@ -16,14 +16,6 @@ public class Animal implements Serializable {
         this.strenght = strenght;
     }
 
-    Animal() {
-        health = 100;
-        damage = 3;
-        agility = 5;
-        strenght = 5;
-
-    }
-
     public int getHealth() {
         return health;
     }
