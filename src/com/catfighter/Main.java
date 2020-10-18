@@ -15,12 +15,12 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         ICatService catService = new CatService();
-        catService.addCat(new Cat(100, 5, 5, 5, 1));
-        catService.addCat(new Cat(100, 3, 10, 10, 1));
-        catService.addCat(new Cat(100, 1, 15, 15, 1));
-        catService.addCat(new Cat(100, 10, 2, 2, 1));
-        catService.addCat(new Cat(100, 6, 3, 4, 1));
-        catService.addCat(new Cat(100, 4, 7, 3, 1));
+        catService.addCat(new Cat(100, 5, 5, 5));
+        catService.addCat(new Cat(100, 3, 10, 10));
+        catService.addCat(new Cat(100, 1, 15, 15));
+        catService.addCat(new Cat(100, 10, 2, 2));
+        catService.addCat(new Cat(100, 6, 3, 4));
+        catService.addCat(new Cat(100, 4, 7, 3));
         Names.nameCats(catService.getCats());
         DiceGame.thatFighters(catService.getFightCats(),catService.getCats());
         System.out.println();

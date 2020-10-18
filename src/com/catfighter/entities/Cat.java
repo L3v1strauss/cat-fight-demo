@@ -5,11 +5,9 @@ import java.io.Serializable;
 public class Cat extends Animal implements Serializable {
 
     private String name;
-    private int luck;
 
-    public Cat(int health, int damage, int agility, int strenght, int luck) {
+    public Cat(int health, int damage, int agility, int strenght) {
         super(health, damage, agility, strenght);
-        this.luck = luck;
 
     }
 
